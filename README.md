@@ -16,3 +16,4 @@ In emergency situations, timely medical intervention is crucial to saving lives.
 
 Circuit Design
 
+![Image](https://github.com/user-attachments/assets/08cf855f-a0c1-42c6-ad84-e30b143943e2)
