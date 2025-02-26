@@ -3,10 +3,12 @@
 ![Image](https://github.com/user-attachments/assets/08cf855f-a0c1-42c6-ad84-e30b143943e2)
 
 Team
-2021/E/074 K. Vashiharan
-2021/E/164 T.Sarujan
-2021/E/169 V.Vithushikan
-2021/E/189 R.Nidhushan
+
+- 2021/E/074    K. Vashiharan
+- 2021/E/164    T. Sarujan
+- 2021/E/169    V. Vithushikan
+- 2021/E/189    R. Nidhushan
+
 
 Introduction
 
