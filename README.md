@@ -1,4 +1,4 @@
-# PATIENT-MONITORING-IN-AMBULANCE-AND-OTHER-VEHICLES
+# VITAL_SYNC  - Patient monitoring in ambulances and other vehicles
 
 Introduction
 
