@@ -1,0 +1,302 @@
+<html>
+  <head>
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
+    <link
+      rel="stylesheet"
+      as="style"
+      onload="this.rel='stylesheet'"
+      href="https://fonts.googleapis.com/css2?display=swap&amp;family=Manrope%3Awght%40400%3B500%3B700%3B800&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900"
+    />
+    <!-- Leaflet.js CSS and JS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+
+    <title>VitalSync</title>
+    <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
+
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  </head>
+  <body>
+    <div class="relative flex size-full min-h-screen flex-col bg-slate-50 group/design-root overflow-x-hidden" style='font-family: Manrope, "Noto Sans", sans-serif;'>
+      <div class="layout-container flex h-full grow flex-col">
+        <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#e7edf3] px-10 py-3">
+          <div class="flex items-center gap-4 text-[#0e141b]">
+            <div class="size-4">
+              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_6_319)">
+                  <path
+                    d="M8.57829 8.57829C5.52816 11.6284 3.451 15.5145 2.60947 19.7452C1.76794 23.9758 2.19984 28.361 3.85056 32.3462C5.50128 36.3314 8.29667 39.7376 11.8832 42.134C15.4698 44.5305 19.6865 45.8096 24 45.8096C28.3135 45.8096 32.5302 44.5305 36.1168 42.134C39.7033 39.7375 42.4987 36.3314 44.1494 32.3462C45.8002 28.361 46.2321 23.9758 45.3905 19.7452C44.549 15.5145 42.4718 11.6284 39.4217 8.57829L24 24L8.57829 8.57829Z"
+                    fill="currentColor"
+                  ></path>
+                </g>
+                <defs>
+                  <clipPath id="clip0_6_319"><rect width="48" height="48" fill="white"></rect></clipPath>
+                </defs>
+              </svg>
+            </div>
+            <h2 class="text-[#0e141b] text-lg font-bold leading-tight tracking-[-0.015em]">GROUP31</h2>
+          </div>
+          <div class="flex flex-1 justify-end gap-8">
+            <div class="flex items-center gap-9">
+              <a class="text-[#0e141b] text-sm font-medium leading-normal" href="#">Features</a>
+           
+              <a class="text-[#0e141b] text-sm font-medium leading-normal" href="#">Docs</a>
+              <a class="text-[#0e141b] text-sm font-medium leading-normal" href="#">Log in</a>
+            </div>
+            <div class="flex gap-2">
+              <button
+                class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 bg-[#1980e6] text-slate-50 text-sm font-bold leading-normal tracking-[0.015em]"
+              >
+                <span class="truncate">Sign up</span>
+              </button>
+              
+            </div>
+          </div>
+        </header>
+        <div class="px-40 flex flex-1 justify-center py-5">
+          <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
+            <div class="@container">
+              <div class="@[480px]:p-4">
+                <div
+                  class="flex min-h-[480px] flex-col gap-6 bg-cover bg-center bg-no-repeat @[480px]:gap-8 @[480px]:rounded-xl items-start justify-end px-4 pb-10 @[480px]:px-10"
+                  style='background-image: linear-gradient(rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.4) 100%), url("https://cdn.usegalileo.ai/sdxl10/84691f90-9c10-4967-bf8b-8630a9cc6b66.png");'
+                >
+                  <div class="flex flex-col gap-2 text-left">
+                    <h1
+                      class="text-white text-4xl font-black leading-tight tracking-[-0.033em] @[480px]:text-5xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em]"
+                    >
+                      VITALSYNC PATIENT MONITORING
+                    </h1>
+                    <h2 class="text-white text-sm font-normal leading-normal @[480px]:text-base @[480px]:font-normal @[480px]:leading-normal">
+                      Revolutionary patient monitoring technology that adapts to your patients' needs
+                    </h2>
+                  </div>
+                  <button
+                    class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 @[480px]:h-12 @[480px]:px-5 bg-[#1980e6] text-slate-50 text-sm font-bold leading-normal tracking-[0.015em] @[480px]:text-base @[480px]:font-bold @[480px]:leading-normal @[480px]:tracking-[0.015em]"
+                  >
+                    <span class="truncate">Learn more</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="flex flex-col gap-10 px-4 py-10 @container">
+              <h1
+                class="text-[#0e141b] tracking-light text-[32px] font-bold leading-tight @[480px]:text-4xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em] max-w-[720px]"
+              >
+                Patient details
+              </h1>
+              <div class="grid grid-cols-[repeat(auto-fit,minmax(158px,1fr))] gap-3 p-0">
+                <div class="flex flex-1 gap-3 rounded-lg border border-[#d0dbe7] bg-slate-50 p-4 flex-col">
+                  <div class="text-[#0e141b]" data-icon="Infinity" data-size="24px" data-weight="regular">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                      <path
+                        d="M248,128a56,56,0,0,1-95.6,39.6l-.33-.35L92.12,99.55a40,40,0,1,0,0,56.9l8.52-9.62a8,8,0,1,1,12,10.61l-8.69,9.81-.33.35a56,56,0,1,1,0-79.2l.33.35,59.95,67.7a40,40,0,1,0,0-56.9l-8.52,9.62a8,8,0,1,1-12-10.61l8.69-9.81.33-.35A56,56,0,0,1,248,128Z"
+                      ></path>
+                    </svg>
+                  </div>
+                  <div class="flex flex-col gap-1">
+                    <h2 class="text-[#0e141b] text-base font-bold leading-tight">Heart rate</h2>
+                    <p class="text-[#4e7397] text-sm font-normal leading-normal">Monitor patients continuously, 24/7</p>
+                    <div class="heart-rate-value text-lg font-semibold">--</div> <!-- This will display heart rate value -->
+                  </div>
+                </div>
+                <div class="flex flex-1 gap-3 rounded-lg border border-[#d0dbe7] bg-slate-50 p-4 flex-col">
+                  <div class="text-[#0e141b]" data-icon="ArrowRight" data-size="24px" data-weight="regular">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                      <path
+                        d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"
+                      ></path>
+                    </svg>
+                  </div>
+                  <div class="flex flex-col gap-1">
+                    <h2 class="text-[#0e141b] text-base font-bold leading-tight">Respiration rate</h2>
+                    <p class="text-[#4e7397] text-sm font-normal leading-normal">Leverage machine learning to predict patient deterioration</p>
+                    <div class="respiration-rate-value text-lg font-semibold">--</div> <!-- This will display respiration rate value -->
+                  </div>
+                </div>
+                <div class="flex flex-1 gap-3 rounded-lg border border-[#d0dbe7] bg-slate-50 p-4 flex-col">
+                  <div class="text-[#0e141b]" data-icon="Repeat" data-size="24px" data-weight="regular">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                      <path
+                        d="M24,128A72.08,72.08,0,0,1,96,56H204.69L194.34,45.66a8,8,0,0,1,11.32-11.32l24,24a8,8,0,0,1,0,11.32l-24,24a8,8,0,0,1-11.32-11.32L204.69,72H96a56.06,56.06,0,0,0-56,56,8,8,0,0,1-16,0Zm200-8a8,8,0,0,0-8,8,56.06,56.06,0,0,1-56,56H51.31l10.35-10.34a8,8,0,0,0-11.32-11.32l-24,24a8,8,0,0,0,0,11.32l24,24a8,8,0,0,0,11.32-11.32L51.31,200H160a72.08,72.08,0,0,0,72-72A8,8,0,0,0,224,120Z"
+                      ></path>
+                    </svg>
+                  </div>
+                  <div class="flex flex-col gap-1">
+                    <h2 class="text-[#0e141b] text-base font-bold leading-tight">Temperature</h2>
+                    <p class="text-[#4e7397] text-sm font-normal leading-normal">Adjust alarm thresholds to reduce false alarms and alarm fatigue</p>
+                    <div class="temperature-value text-lg font-semibold">--</div> <!-- This will display temperature value -->
+                  </div>
+                </div>
+                
+
+              </div>
+            </div>
+            <div class="grid grid-cols-[repeat(auto-fit,minmax(158px,1fr))] gap-3 p-0 mt-8">
+              <!-- Longitude (Heart Rate) Card -->
+              <div class="flex flex-1 gap-3 rounded-lg border border-[#d0dbe7] bg-slate-50 p-4 flex-col">
+                  <div class="text-[#0e141b]" data-icon="Infinity" data-size="24px" data-weight="regular">
+                      <!-- Location Icon -->
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                          <path d="M128,8A88,88,0,0,0,40,96c0,35.29,20.72,80,55.53,118.35,26.77,30.07,52.48,46.68,54.43,47.81a8,8,0,0,0,7.88,0c1.95-1.13,27.66-17.74,54.43-47.81C195.28,176,216,131.29,216,96A88,88,0,0,0,128,8Zm0,120a32,32,0,1,1,32-32A32,32,0,0,1,128,128Z"></path>
+                      </svg>
+                  </div>
+                  <div class="flex flex-col gap-1">
+                      <h2 class="text-[#0e141b] text-base font-bold leading-tight">Longitude</h2>
+                      <p class="text-[#4e7397] text-sm font-normal leading-normal">Real-time GPS longitude tracking</p>
+                      <div class="longitude-value text-lg font-semibold">--</div> <!-- This will display longitude value -->
+                  </div>
+              </div>
+              <!-- Latitude Card -->
+              <div class="flex flex-1 gap-3 rounded-lg border border-[#d0dbe7] bg-slate-50 p-4 flex-col">
+                  <div class="text-[#0e141b]" data-icon="Repeat" data-size="24px" data-weight="regular">
+                      <!-- Location Icon -->
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                          <path d="M128,8A88,88,0,0,0,40,96c0,35.29,20.72,80,55.53,118.35,26.77,30.07,52.48,46.68,54.43,47.81a8,8,0,0,0,7.88,0c1.95-1.13,27.66-17.74,54.43-47.81C195.28,176,216,131.29,216,96A88,88,0,0,0,128,8Zm0,120a32,32,0,1,1,32-32A32,32,0,0,1,128,128Z"></path>
+                      </svg>
+                  </div>
+                  <div class="flex flex-col gap-1">
+                      <h2 class="text-[#0e141b] text-base font-bold leading-tight">Latitude</h2>
+                      <p class="text-[#4e7397] text-sm font-normal leading-normal">Real-time GPS latitude tracking</p>
+                      <div class="latitude-value text-lg font-semibold">--</div> <!-- This will display latitude value -->
+                  </div>
+              </div>
+          </div>
+      <br>
+          <!-- Map Container -->
+          <div id="map" style="height: 400px; width: 100%;"></div>
+      </div>
+    </div>
+  </body>
+</html>
+
+<!-- Firebase Scripts -->
+<script type="module">
+  // Import Firebase functions
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/11.3.1/firebase-app.js";
+  import { getDatabase, ref, set, onValue } from "https://www.gstatic.com/firebasejs/11.3.1/firebase-database.js";
+
+  // Firebase configuration
+  const firebaseConfig = {
+      apiKey: "AIzaSyCgek5wwG2H37tUwWHf5ron0SwUSOMbzAk",
+      authDomain: "patientmonotoring.firebaseapp.com",
+      databaseURL: "https://patientmonotoring-default-rtdb.firebaseio.com/",
+      projectId: "patientmonotoring",
+      storageBucket: "patientmonotoring.appspot.com",
+      messagingSenderId: "942018213349",
+      appId: "1:942018213349:web:f85205e37928c228706b0c",
+      measurementId: "G-ETF7QLCV9G"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const db = getDatabase(app);
+
+  // Function to generate random data for heart rate, temperature, and respiration rate
+  function generateRandomData() {
+      const heartRate = Math.floor(60 + Math.random() * 40);  // Random heart rate between 60-100
+      const temperature = (Math.random() * 2 + 36.5).toFixed(1);  // Random temperature between 36.5 and 38.5
+      const respirationRate = Math.floor(12 + Math.random() * 8); // Random respiration rate between 12-20
+
+      return { heartRate, temperature, respirationRate };
+  }
+
+  // Function to send random data to Firebase
+  function updateData() {
+      const { heartRate, temperature, respirationRate } = generateRandomData();
+
+      // Update the generated data to Firebase
+      set(ref(db, "ESP32_DB/Patient_Monitoring_Data"), {
+          heart_rate: heartRate,
+          temperature: temperature,
+          respiration_rate: respirationRate
+      })
+      .then(() => {
+          console.log(`✅ New Data Updated: Heart Rate: ${heartRate}, Temperature: ${temperature}, Respiration Rate: ${respirationRate}`);
+      })
+      .catch((error) => {
+          console.error("❌ Error writing to Firebase:", error);
+      });
+  }
+
+  // Read Data from Firebase in real-time
+  function readData() {
+      const dbRef = ref(db, "ESP32_DB/Patient_Monitoring_Data");
+      onValue(dbRef, (snapshot) => {
+          if (snapshot.exists()) {
+              const data = snapshot.val();
+              console.log("🔥 Realtime Data Retrieved:", data);
+              document.querySelector(".heart-rate-value").innerText = `${data.heart_rate} bpm`;
+              document.querySelector(".respiration-rate-value").innerText = `${data.respiration_rate} bpm`;
+              document.querySelector(".temperature-value").innerText = `${data.temperature} °C`;
+          } else {
+              console.log("⚠ No data found in Firebase.");
+          }
+      });
+  }
+
+  // Start updating data every 3 seconds
+  setInterval(updateData, 3000);
+
+  // Start real-time data reading
+  readData();
+
+  // Set initial latitude and longitude values
+  let latitude = 9.3124;  // Initial latitude (you can set this to any value)
+        const longitude = 80.4020; // Fixed longitude
+
+        // Initialize the map using Leaflet
+        const map = L.map('map').setView([latitude, longitude], 13); // Initial view with zoom level 13
+
+        // Add OpenStreetMap tiles to the map
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+
+        // Add a marker on the map
+        const marker = L.marker([latitude, longitude]).addTo(map);
+
+        // Function to update latitude every second
+        function updateLatitude() {
+            latitude += 0.0001;  // Increment latitude by 0.0001 every second
+
+            // Update Firebase with the new values
+            set(ref(db, "ESP32_DB/ambulance_1"), {
+                lng: longitude.toFixed(6),
+                lat: latitude.toFixed(6)
+            })
+            .then(() => {
+                console.log(`✅ Data Updated: Longitude: ${longitude.toFixed(6)}, Latitude: ${latitude.toFixed(6)}`);
+            })
+            .catch((error) => {
+                console.error("❌ Error writing to Firebase:", error);
+            });
+        }
+
+        // Read Data from Firebase in real-time
+        function readData_gps() {
+            const dbRef = ref(db, "ESP32_DB/ambulance_1");
+            onValue(dbRef, (snapshot) => {
+                if (snapshot.exists()) {
+                    const data = snapshot.val();
+                    console.log("🔥 Realtime Data Retrieved:", data);
+
+                    // Update the displayed longitude and latitude
+                    document.querySelector(".longitude-value").innerText = `${data.lng}`;
+                    document.querySelector(".latitude-value").innerText = `${data.lat}`;
+
+                    // Move the marker to the new position on the map
+                    marker.setLatLng([data.lat, data.lng]);
+                    map.setView([data.lat, data.lng], 13); // Update the map's view
+                } else {
+                    console.log("⚠ No data found in Firebase.");
+                }
+            });
+        }
+
+        // Start updating latitude every second
+        setInterval(updateLatitude, 100);
+
+        // Start real-time data reading
+        readData_gps();
+</script>
