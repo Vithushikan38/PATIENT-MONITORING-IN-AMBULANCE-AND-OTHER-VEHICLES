@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GPS Tracker Data</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+    }
+    h1 {
+      text-align: center;
+    }
+    .data {
+      font-size: 20px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>GPS Tracker Sensor Data</h1>
+
+  <div class="data" id="gpsData">
+    Waiting for GPS data...
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/mqtt/dist/mqtt.min.js"></script>
+  <script>
+    // MQTT Configuration
+    const mqttServer = 'ws://test.mosquitto.org:8080'; // Use WebSocket MQTT broker
+    const mqttTopic = 'gpslcation';
+
+    // Connect to the MQTT broker
+    const client = mqtt.connect(mqttServer);
+
+    // Display incoming MQTT data
+    client.on('connect', function () {
+      console.log('Connected to MQTT broker');
+      client.subscribe(mqttTopic, function (err) {
+        if (err) {
+          console.error('Subscription error:', err);
+        }
+      });
+    });
+
+    // When message is received on the subscribed topic
+    client.on('message', function (topic, message) {
+      const gpsData = JSON.parse(message.toString());
+      console.log(gpsData);
+      displayData(gpsData);
+    });
+
+    // Function to display the GPS data on the webpage
+    function displayData(data) {
+      const gpsDataElement = document.getElementById('gpsData');
+
+      if (data.lat && data.lng) {
+        gpsDataElement.innerHTML = `
+          Latitude: ${data.lat}<br>
+          Longitude: ${data.lng}<br>
+          Altitude: ${data.alt} meters<br>
+          Satellites: ${data.sat}<br>
+          HDOP: ${data.hdop}<br>
+          Time: ${data.time}
+        `;
+      } else {
+        gpsDataElement.innerHTML = 'No valid GPS data available';
+      }
+    }
+  </script>
+
+</body>
+</html>
