@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BPM and SpO2 Monitor</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      text-align: center;
+      background-color: #f0f0f0;
+    }
+    h1 {
+      margin-bottom: 20px;
+    }
+    .value {
+      font-size: 36px;
+      color: #333;
+      margin-top: 20px;
+    }
+    .status {
+      margin-top: 20px;
+      color: green;
+    }
+    .bpm {
+      color: #4CAF50; /* Green */
+    }
+    .spo2 {
+      color: #2196F3; /* Blue */
+    }
+    .no-finger {
+      color: red; /* Red for no finger detected */
+      font-size: 24px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Current BPM and SpO2 from MQTT</h1>
+  <div class="value bpm" id="bpm">BPM: Waiting for data...</div>
+  <div class="value spo2" id="spo2">SpO2: Waiting for data...</div>
+  <div class="status" id="status"></div>
+  <div class="no-finger" id="noFingerStatus">No finger detected: Waiting for data...</div>
+
+  <script src="https://cdn.jsdelivr.net/npm/mqtt/dist/mqtt.min.js"></script>
+  <script>
+    // MQTT Configuration
+    const mqttServer = 'ws://test.mosquitto.org:8080';  // WebSocket MQTT broker URL (adjust if needed)
+    const mqttTopic = 'home/MAX30105/heartRate';  // Topic to subscribe to
+
+    // Connect to the MQTT broker
+    const client = mqtt.connect(mqttServer);
+
+    // On connection to MQTT broker
+    client.on('connect', function () {
+      console.log('Connected to MQTT broker');
+      client.subscribe(mqttTopic, function (err) {
+        if (err) {
+          console.error('Subscription error:', err);
+        }
+      });
+      document.getElementById('status').textContent = 'Connected to MQTT broker';
+    });
+
+    // On receiving a message from the MQTT broker
+    client.on('message', function (topic, message) {
+      const payload = message.toString();  // Convert message to string
+      console.log('Received data:', payload);
+
+      // Check if the message is "No finger detected"
+      if (payload === "No finger detected") {
+        displayNoFingerDetected();  // Display the "No finger detected" message
+        return;
+      }
+
+      // Extract BPM and SpO2 values from the message
+      const regex = /BPM: (\d+\.\d+), SpO2: (\d+\.\d+)/;
+      const match = payload.match(regex);
+
+      if (match) {
+        const bpm = match[1];
+        const spo2 = match[2];
+
+        displayBPM(bpm);  // Display BPM
+        displaySpO2(spo2);  // Display SpO2
+      } else {
+        // If message format is unexpected, print raw message
+        console.error("Invalid message format:", payload);
+      }
+    });
+
+    // Function to update the displayed BPM
+    function displayBPM(bpm) {
+      const bpmElement = document.getElementById('bpm');
+      bpmElement.textContent = `BPM: ${bpm}`;
+    }
+
+    // Function to update the displayed SpO2
+    function displaySpO2(spo2) {
+      const spo2Element = document.getElementById('spo2');
+      spo2Element.textContent = `SpO2: ${spo2} %`;
+    }
+
+    // Function to display "No finger detected" message
+    function displayNoFingerDetected() {
+      const noFingerElement = document.getElementById('noFingerStatus');
+      noFingerElement.textContent = "No finger detected!";
+      
+      // Update BPM and SpO2 values to '--'
+      const bpmElement = document.getElementById('bpm');
+      const spo2Element = document.getElementById('spo2');
+      
+      bpmElement.textContent = "BPM: --";
+      spo2Element.textContent = "SpO2: --";
+    }
+  </script>
+
+</body>
+</html>
