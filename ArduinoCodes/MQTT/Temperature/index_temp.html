@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Temperature Display</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      text-align: center;
+      background-color: #f0f0f0;
+    }
+    h1 {
+      margin-bottom: 20px;
+    }
+    .temperature {
+      font-size: 36px;
+      color: #333;
+      margin-top: 20px;
+    }
+    .status {
+      margin-top: 20px;
+      color: green;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Current Temperature from MQTT</h1>
+  <div class="temperature" id="temperature">Waiting for data...</div>
+  <div class="status" id="status"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/mqtt/dist/mqtt.min.js"></script>
+  <script>
+    // MQTT Configuration
+    const mqttServer = 'ws://test.mosquitto.org:8080';  // WebSocket MQTT broker URL (adjust if needed)
+    const mqttTopic = 'home/temperature/dallas';  // Topic to subscribe to
+
+    // Connect to the MQTT broker
+    const client = mqtt.connect(mqttServer);
+
+    // On connection to MQTT broker
+    client.on('connect', function () {
+      console.log('Connected to MQTT broker');
+      client.subscribe(mqttTopic, function (err) {
+        if (err) {
+          console.error('Subscription error:', err);
+        }
+      });
+      document.getElementById('status').textContent = 'Connected to MQTT broker';
+    });
+
+    // On receiving a message from the MQTT broker
+    client.on('message', function (topic, message) {
+      const tempC = message.toString();  // Convert message to string
+      console.log('Received temperature:', tempC);
+      displayTemperature(tempC);  // Display the temperature on the page
+    });
+
+    // Function to update the displayed temperature
+    function displayTemperature(temp) {
+      const tempElement = document.getElementById('temperature');
+      tempElement.textContent = `Temperature: ${temp} °C`;
+    }
+  </script>
+
+</body>
+</html>
