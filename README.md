@@ -1,6 +1,6 @@
 # VITAL_SYNC  - Patient monitoring in ambulances and other vehicles
 
-![Image](https://github.com/user-attachments/assets/5ac5c6fd-2595-4d0f-b587-4e885b7db8bc)
+![Image](https://github.com/user-attachments/assets/166f3bce-46ba-4ed7-94f2-e914d0d95385)
 
 Team
 
