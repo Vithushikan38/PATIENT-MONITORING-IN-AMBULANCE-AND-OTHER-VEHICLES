@@ -4,10 +4,10 @@
 
 Team
 
-- 2021/E/074    K. Vashiharan
-- 2021/E/164    T. Sarujan
-- 2021/E/169    V. Vithushikan
-- 2021/E/189    R. Nidhushan
+- 2021/E/074    K. Vashiharan -(https://www.linkedin.com/in/vashiharan)      
+- 2021/E/164    T. Sarujan    - (https://www.linkedin.com/in/sarujan-thirunavukkarasu)
+- 2021/E/169    V. Vithushikan-(https://www.linkedin.com/in/vvithushikan21)
+- 2021/E/189    R. Nidhushan  -(https://www.linkedin.com/in/nidhushan-rajendran)
 
 
 Introduction
