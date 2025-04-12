@@ -4,11 +4,10 @@
 
 Team
 
-- 2021/E/074    K. Vashiharan -(https://www.linkedin.com/in/vashiharan)      
-- 2021/E/164    T. Sarujan    - (https://www.linkedin.com/in/sarujan-thirunavukkarasu)
-- 2021/E/169    V. Vithushikan-(https://www.linkedin.com/in/vvithushikan21)
-- 2021/E/189    R. Nidhushan  -(https://www.linkedin.com/in/nidhushan-rajendran)
-
+- 2021/E/074    K. Vashiharan -https://www.linkedin.com/in/vashiharan02?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3Bbq%2ByZ5c9TYec16hnWs7fLA%3D%3D      
+- 2021/E/164    T. Sarujan    -https://www.linkedin.com/in/sarujan-thirunavukkarasu-2b72bb2b5lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3Bo2gnX580QsemtR7ihnrzcw%3D%3D
+- 2021/E/169    V. Vithushikan-https://www.linkedin.com/in/vvithushikan21
+- 2021/E/189    R. Nidhushan  -https://www.linkedin.com/in/nidhushan-rajendran-a22a16244?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BKUsuWRM9TdS0kuhILcVcag%3D%3D
 
 Introduction
 
